@@ -50,8 +50,10 @@ class GPTService
     private function sendGPTRequest($prompt)
     {
         $client = new Client(['verify' => false]);
+        //$key = "AIzaSyBnuTAPRe6FyPPM_gMiNoJrIPk-HwFs43U";
+        $key = "";
 
-        return $client->post('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBnuTAPRe6FyPPM_gMiNoJrIPk-HwFs43U', [
+        return $client->post("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$key", [
             'headers' => [
                 'Content-Type' => 'application/json',
             ],
